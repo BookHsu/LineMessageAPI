@@ -30,7 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,11 +44,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\AllEnums.cs" />
     <Compile Include="LineChannel.cs" />
+    <Compile Include="MessageApi.cs" />
+    <Compile Include="MessageObj\LineActions\DatetimeAction.cs" />
+    <Compile Include="MessageObj\LineActions\MessageAction.cs" />
+    <Compile Include="MessageObj\LineActions\PostBackAction.cs" />
+    <Compile Include="MessageObj\LineActions\PostBackBase.cs" />
+    <Compile Include="MessageObj\LineActions\TemplateActionBase.cs" />
+    <Compile Include="MessageObj\LineActions\UriAction.cs" />
+    <Compile Include="MessageObj\TemplatesMsg\CarouselMessage.cs" />
+    <Compile Include="MessageObj\TemplatesMsg\ColumnObj\CarouselColumn.cs" />
+    <Compile Include="MessageObj\TemplatesMsg\ColumnObj\ImgCarouselColumn.cs" />
+    <Compile Include="MessageObj\TemplatesMsg\ColumnObj\LineColumnBase.cs" />
+    <Compile Include="MessageObj\TemplatesMsg\ConfirmMessage.cs" />
+    <Compile Include="MessageObj\TemplatesMsg\ImageCarouselMessage.cs" />
+    <Compile Include="MessageObj\TemplatesMsg\TemplateBase.cs" />
+    <Compile Include="MessageObj\AudioMessage.cs" />
+    <Compile Include="MessageObj\LineActions\ImageMap\BaseSize.cs" />
+    <Compile Include="MessageObj\ImageMapMessage.cs" />
+    <Compile Include="MessageObj\LineActions\ImageMap\ImageMapActionsBase.cs" />
+    <Compile Include="MessageObj\LineActions\ImageMap\ImageMapArea.cs" />
+    <Compile Include="MessageObj\LineActions\ImageMap\ImgMapTextAction.cs" />
+    <Compile Include="MessageObj\LineActions\ImageMap\ImgMapUriAction.cs" />
+    <Compile Include="MessageObj\ImageMessage.cs" />
+    <Compile Include="MessageObj\LineActions\LineActionsBase.cs" />
+    <Compile Include="MessageObj\LocationMessage.cs" />
+    <Compile Include="MessageObj\MessageObjectBase.cs" />
+    <Compile Include="MessageObj\StickerMessage.cs" />
+    <Compile Include="MessageObj\TemplateMessage.cs" />
+    <Compile Include="MessageObj\TemplatesMsg\ButtonMessage.cs" />
+    <Compile Include="MessageObj\VideoMessage.cs" />
+    <Compile Include="SendMsg\MulticastMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendMsg\PushMessage.cs" />
+    <Compile Include="ReceiverObj\ErrorDetail.cs" />
+    <Compile Include="ReceiverObj\LineBeacon.cs" />
+    <Compile Include="ReceiverObj\LineErrorResponse.cs" />
+    <Compile Include="ReceiverObj\LineEvents.cs" />
+    <Compile Include="ReceiverObj\LineMessage.cs" />
+    <Compile Include="ReceiverObj\LineParams.cs" />
+    <Compile Include="ReceiverObj\LinePostBack.cs" />
+    <Compile Include="ReceiverObj\LineReceivedMsg.cs" />
+    <Compile Include="ReceiverObj\LineSource.cs" />
+    <Compile Include="ReceiverObj\UserProfile.cs" />
+    <Compile Include="MessageObj\TextMessage.cs" />
+    <Compile Include="SendMsg\ReplyMessage.cs" />
+    <Compile Include="SendMsg\SendMessage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ReceiverObj\" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
