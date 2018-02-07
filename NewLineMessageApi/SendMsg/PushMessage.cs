@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NewLineMessageApi.MessageObj;
 
 namespace NewLineMessageApi
@@ -11,22 +7,23 @@ namespace NewLineMessageApi
     public sealed class PushMessage : SendMessage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PushMessage() : base()
         {
-
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="ToId"></param>
         public PushMessage(string ToId) : this()
         {
             to = ToId;
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="ToId"></param>
         /// <param name="msg"></param>
@@ -36,8 +33,9 @@ namespace NewLineMessageApi
 
             messages.AddRange(msg);
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string to { get; set; }
     }

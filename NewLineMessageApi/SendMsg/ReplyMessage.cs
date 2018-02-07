@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NewLineMessageApi.MessageObj;
 
 namespace NewLineMessageApi
@@ -11,15 +7,16 @@ namespace NewLineMessageApi
     public sealed class ReplyMessage : SendMessage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="ReplyToken"></param>
         public ReplyMessage(string ReplyToken) : base()
         {
             replyToken = ReplyToken;
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="ReplyToken"></param>
         /// <param name="msg"></param>

@@ -1,31 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewLineMessageApi.LineActions
+﻿namespace NewLineMessageApi.LineActions
 {
     /// <summary>
     /// PostBack.Action
     /// </summary>
-    public class PostBackAction:PostBackBase
+    public class PostBackAction : PostBackBase
     {
         /// <summary>
         /// 初始化
         /// </summary>
-        public PostBackAction():base(ActionType.postback)
+        public PostBackAction() : base(ActionType.postback)
         {
-
         }
+
         /// <summary>
         /// 初始化
         /// </summary>
         /// <param name="Data">必填項目</param>
-        public PostBackAction(string Data):this()
+        public PostBackAction(string Data) : this()
         {
             data = Data;
         }
+
         /// <summary>
         /// 初始化
         /// </summary>

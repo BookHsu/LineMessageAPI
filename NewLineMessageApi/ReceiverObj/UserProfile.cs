@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewLineMessageApi
+﻿namespace NewLineMessageApi
 {
     /// <summary>使用者檔案 </summary>
     public class UserProfile

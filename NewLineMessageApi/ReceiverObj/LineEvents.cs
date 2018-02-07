@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewLineMessageApi
+﻿namespace NewLineMessageApi
 {
     /// <summary>
     /// Line事件
@@ -23,7 +17,7 @@ namespace NewLineMessageApi
         /// <summary>使用reply message 憑證 只可使用一次</summary>
         public string replyToken { get; set; }
 
-        /// <summary>訊息來源物件資訊</summary> 
+        /// <summary>訊息來源物件資訊</summary>
         public LineSource source { get; set; }
 
         /// <summary>時間整型</summary>

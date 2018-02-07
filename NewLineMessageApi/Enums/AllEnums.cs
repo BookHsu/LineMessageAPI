@@ -1,22 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewLineMessageApi
-{   
-    /// <summary>訊息來源</summary>
-    public enum SourceType
+﻿namespace NewLineMessageApi
+{
+    /// <summary>動作類型</summary>
+    public enum ActionType
     {
-        /// <summary>使用者</summary>
-        user,
+        /// <summary>使用者點擊後打開瀏覽器</summary>
+        uri,
 
-        /// <summary>群組</summary>
-        group,
+        /// <summary>使用者點及後傳送設定好的文字訊息視為使用者傳送的訊息</summary>
+        message,
 
-        /// <summary>多方對談</summary>
-        room
+        /// <summary>點擊後傳送postback event</summary>
+        postback,
+
+        /// <summary>dateTimePucker Action</summary>
+        datetimepicker
+    }
+
+    /// <summary></summary>
+    public enum BeaconType
+    {
+        /// <summary></summary>
+        enter,
+
+        /// <summary></summary>
+        leave,
+
+        /// <summary></summary>
+        banner
+    }
+
+    /// <summary>
+    /// 日期ACTION使用 templtetype應為Button
+    /// </summary>
+    public enum DateTimePickerType
+    {
+        /// <summary>
+        /// date mode
+        /// </summary>
+        date,
+
+        /// <summary>
+        /// time mode
+        /// </summary>
+        time,
+
+        /// <summary>
+        /// datetime mode
+        /// </summary>
+        datetime
     }
 
     /// <summary>line 主動推播 事件類型</summary>
@@ -44,18 +75,38 @@ namespace NewLineMessageApi
         beacon,
     }
 
-    /// <summary></summary>
-    public enum BeaconType
+    /// <summary>
+    ///
+    /// </summary>
+    public enum ImgAspectRatioType
     {
-        /// <summary></summary>
-        enter,
+        /// <summary>
+        ///
+        /// </summary>
+        rectangle,
 
-        /// <summary></summary>
-        leave,
-
-        /// <summary></summary>
-        banner
+        /// <summary>
+        ///
+        /// </summary>
+        square
     }
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum ImgSizeType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        cover,
+
+        /// <summary>
+        ///
+        /// </summary>
+        contain
+    }
+
     /// <summary>訊息類型</summary>
     public enum MessageType
     {
@@ -80,6 +131,22 @@ namespace NewLineMessageApi
         /// <summary>貼圖</summary>
         sticker,
     }
+
+    /// <summary>
+    /// 訊息類型
+    /// </summary>
+    public enum PostMessageType
+    {
+        /// <summary>回復訊息</summary>
+        Reply,
+
+        /// <summary>主動推播</summary>
+        Push,
+
+        /// <summary>主動堆播給多位使用者</summary>
+        Multicast
+    }
+
     /// <summary>發送訊息類型</summary>
     public enum SendMessageType
     {
@@ -107,20 +174,20 @@ namespace NewLineMessageApi
         /// <summary>樣板訊息</summary>
         template
     }
-    /// <summary>動作類型</summary>
-    public enum ActionType
+
+    /// <summary>訊息來源</summary>
+    public enum SourceType
     {
-        /// <summary>使用者點擊後打開瀏覽器</summary>
-        uri,
+        /// <summary>使用者</summary>
+        user,
 
-        /// <summary>使用者點及後傳送設定好的文字訊息視為使用者傳送的訊息</summary>
-        message,
+        /// <summary>群組</summary>
+        group,
 
-        /// <summary>點擊後傳送postback event</summary>
-        postback,
-        /// <summary>dateTimePucker Action</summary>
-        datetimepicker
+        /// <summary>多方對談</summary>
+        room
     }
+
     /// <summary> </summary>
     public enum TemplateType
     {
@@ -132,69 +199,8 @@ namespace NewLineMessageApi
 
         /// <summary></summary>
         carousel,
+
         /// <summary></summary>
         image_carousel
     }
-    /// <summary>
-    /// 
-    /// </summary>
-    public enum ImgAspectRatioType
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        rectangle,
-        /// <summary>
-        /// 
-        /// </summary>
-        square
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    public enum ImgSizeType
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        cover,
-        /// <summary>
-        /// 
-        /// </summary>
-        contain
-    }
-
-    /// <summary>
-    /// 日期ACTION使用 templtetype應為Button
-    /// </summary>
-    public enum DateTimePickerType
-    {
-        /// <summary>
-        /// date mode
-        /// </summary>
-        date,
-        /// <summary>
-        /// time mode
-        /// </summary>
-        time,
-        /// <summary>
-        /// datetime mode
-        /// </summary>
-        datetime
-    }
-    /// <summary>
-    /// 訊息類型
-    /// </summary>
-    public enum PostMessageType
-    {
-        /// <summary>回復訊息</summary>
-        Reply,
-
-        /// <summary>主動推播</summary>
-        Push,
-
-        /// <summary>主動堆播給多位使用者</summary>
-        Multicast
-    }
-
 }

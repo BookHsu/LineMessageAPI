@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NewLineMessageApi.MessageObj;
 
 namespace NewLineMessageApi
@@ -10,37 +8,40 @@ namespace NewLineMessageApi
     /// <summary>
     /// 傳送訊息給大量使用者
     /// </summary>
-    public sealed class MulticastMessage: SendMessage
+    public sealed class MulticastMessage : SendMessage
     {
         /// <summary>
         /// 初始化
         /// </summary>
-        public MulticastMessage():base()
+        public MulticastMessage() : base()
         {
             to = new string[150];
         }
+
         /// <summary>
         /// 初始化
         /// </summary>
         /// <param name="msg"></param>
-        public MulticastMessage(params MessageObjectBase [] msg):this()
+        public MulticastMessage(params MessageObjectBase[] msg) : this()
         {
-            if (msg.Length>5) throw new Exception("推播訊息不可大於五");
+            if (msg.Length > 5) throw new Exception("推播訊息不可大於五");
 
             messages.AddRange(msg);
         }
+
         /// <summary>
         /// 初始化
         /// </summary>
         /// <param name="To"></param>
         /// <param name="msg"></param>
-        public MulticastMessage(IList<string>To,params MessageObjectBase[] msg):this(msg)
+        public MulticastMessage(IList<string> To, params MessageObjectBase[] msg) : this(msg)
         {
             to = To.ToArray();
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public string [] to { get; set; }
+        public string[] to { get; set; }
     }
 }

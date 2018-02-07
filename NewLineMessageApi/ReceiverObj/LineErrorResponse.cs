@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace NewLineMessageApi
 {
     /// <summary>
     /// 錯誤訊息元件
     /// </summary>
-   public class LineErrorResponse
+    public class LineErrorResponse
     {
         /// <summary></summary>
         public List<ErrorDetail> details { get; set; }

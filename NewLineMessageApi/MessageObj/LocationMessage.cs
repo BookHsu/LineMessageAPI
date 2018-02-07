@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace NewLineMessageApi.MessageObj
 {
     /// <summary>
     /// 地理位置
     /// </summary>
-    public class LocationMessage:MessageObjectBase
+    public class LocationMessage : MessageObjectBase
     {
         /// <summary>
         /// 初始化
         /// </summary>
-        public LocationMessage():base(SendMessageType.location)
+        public LocationMessage() : base(SendMessageType.location)
         {
-
         }
-        /// <summary>地址</summary> 
+
+        /// <summary>地址</summary>
         [StringLength(1000, ErrorMessage = "訊息過長")]
         public string address { get; set; }
 

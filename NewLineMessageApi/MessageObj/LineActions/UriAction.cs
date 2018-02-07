@@ -1,37 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewLineMessageApi.LineActions
+﻿namespace NewLineMessageApi.LineActions
 {
     /// <summary>
     /// 網址連結Action
     /// </summary>
-   public class UriAction:TemplateActionBase
+    public class UriAction : TemplateActionBase
     {
         /// <summary>
         /// 初始化
         /// </summary>
-        public UriAction():base(ActionType.uri)
+        public UriAction() : base(ActionType.uri)
         {
-
         }
+
         /// <summary>
         /// 初始化
         /// </summary>
         /// <param name="URI"></param>
-        public UriAction(string URI):this()
+        public UriAction(string URI) : this()
         {
             uri = URI;
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="URI"></param>
         /// <param name="Label">除image carousel外皆必填</param>
-        public UriAction(string URI,string Label):this(URI)
+        public UriAction(string URI, string Label) : this(URI)
         {
             label = Label;
         }

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewLineMessageApi.LineActions.ImageMap
+﻿namespace NewLineMessageApi.LineActions.ImageMap
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ImageMapArea
     {

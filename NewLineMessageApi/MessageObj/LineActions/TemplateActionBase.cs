@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewLineMessageApi.LineActions
+﻿namespace NewLineMessageApi.LineActions
 {
     /// <summary>
     /// Template專用Action基底抽象類別
     /// </summary>
-   public abstract class TemplateActionBase:LineActionsBase
+    public abstract class TemplateActionBase : LineActionsBase
     {
         /// <summary>
         /// 初始化
         /// </summary>
         /// <param name="actionType"></param>
-        protected TemplateActionBase(ActionType actionType):base(actionType)
+        protected TemplateActionBase(ActionType actionType) : base(actionType)
         {
-
         }
+
         /// <summary>
         /// 除image carousel外皆必填
         /// </summary>

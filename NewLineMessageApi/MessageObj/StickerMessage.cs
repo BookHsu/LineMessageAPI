@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace NewLineMessageApi.MessageObj
+﻿namespace NewLineMessageApi.MessageObj
 {
     /// <summary>貼圖</summary>
-    public class StickerMessage:MessageObjectBase
+    public class StickerMessage : MessageObjectBase
     {
         /// <summary>初始化</summary>
-        public StickerMessage():base(SendMessageType.sticker)
+        public StickerMessage() : base(SendMessageType.sticker)
         {
-
         }
+
         /// <summary>直接傳入參數</summary>
         /// <param name="IpackageId">STKPKGID</param>
         /// <param name="IstickerId">STKGID</param>
@@ -23,6 +16,7 @@ namespace NewLineMessageApi.MessageObj
             packageId = IpackageId.ToString();
             stickerId = IstickerId.ToString();
         }
+
         /// <summary>直接傳入參數</summary>
         /// <param name="spackageId">STKPKGID</param>
         /// <param name="sstickerId">STKGID</param>

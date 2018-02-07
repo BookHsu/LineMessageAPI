@@ -1,7 +1,7 @@
 ﻿namespace NewLineMessageApi
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class LineBeacon
     {
@@ -11,7 +11,7 @@
         /// <summary></summary>
         public string hwid { get; set; }
 
-        /// <summary></summary> 
+        /// <summary></summary>
         public BeaconType type { get; set; }
     }
 }

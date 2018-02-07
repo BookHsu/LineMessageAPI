@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace NewLineMessageApi.MessageObj
 {
@@ -12,9 +6,8 @@ namespace NewLineMessageApi.MessageObj
     public class TextMessage : MessageObjectBase
     {
         /// <summary></summary>
-        public TextMessage():base(SendMessageType.text)
+        public TextMessage() : base(SendMessageType.text)
         {
-            
         }
 
         /// <summary>直接傳入文字訊息</summary>
