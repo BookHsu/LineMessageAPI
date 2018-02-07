@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NewLineMessageApi.LineActions.ImageMap
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ImageMapArea
     {
         /// <summary></summary>

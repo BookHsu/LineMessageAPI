@@ -10,22 +10,37 @@ namespace NewLineMessageApi
     /// <summary>
     /// 傳送訊息給大量使用者
     /// </summary>
-    internal sealed class MulticastMessage: SendMessage
+    public sealed class MulticastMessage: SendMessage
     {
-        internal MulticastMessage():base()
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public MulticastMessage():base()
         {
             to = new string[150];
         }
-        internal MulticastMessage(params MessageObjectBase [] msg):this()
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="msg"></param>
+        public MulticastMessage(params MessageObjectBase [] msg):this()
         {
             if (msg.Length>5) throw new Exception("推播訊息不可大於五");
 
             messages.AddRange(msg);
         }
-        internal MulticastMessage(IList<string>To,params MessageObjectBase[] msg):this(msg)
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="To"></param>
+        /// <param name="msg"></param>
+        public MulticastMessage(IList<string>To,params MessageObjectBase[] msg):this(msg)
         {
             to = To.ToArray();
         }
-        internal string [] to { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string [] to { get; set; }
     }
 }

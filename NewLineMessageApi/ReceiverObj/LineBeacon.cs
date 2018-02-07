@@ -1,5 +1,8 @@
 ﻿namespace NewLineMessageApi
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class LineBeacon
     {
         /// <summary></summary>

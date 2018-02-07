@@ -11,20 +11,22 @@ namespace NewLineMessageApi
     internal static class MessageApi
     {
 
-        private static HttpClient client;
+        
         #region Private
 
-        private static void SetClient(string ChannelAccessToken)
+        private static HttpClient SetClient(string ChannelAccessToken)
         {
-            client = new HttpClient();
+           var client = new HttpClient();
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ChannelAccessToken);
+            return client;
         }
         private static Exception throwLineErrorMsg(string result)
         {
             LineErrorResponse err = JsonConvert.DeserializeObject<LineErrorResponse>(result);
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(err.message + ",");
+            if(err.details==null) return new Exception(sb.ToString());
             foreach (var item in err.details)
             {
                 sb.AppendLine(string.Format("{0},{1}", item.property, item.message));
@@ -40,7 +42,7 @@ namespace NewLineMessageApi
         /// <returns></returns>
         internal static byte[] GetContnt(string ChannelAccessToken, string message_id)
         {
-            if (client == null) SetClient(ChannelAccessToken);
+            HttpClient client= SetClient(ChannelAccessToken);
             try
             {
                 string strUrl = string.Format("https://api.line.me/v2/bot/message/{0}/content", message_id);
@@ -61,7 +63,7 @@ namespace NewLineMessageApi
         /// <returns></returns>
         internal static UserProfile GetUserProfile(string ChannelAccessToken, string userid)
         {
-            if (client == null) SetClient(ChannelAccessToken);
+            HttpClient client = SetClient(ChannelAccessToken);
             try
             {
                 string strUrl = string.Format("https://api.line.me/v2/bot/profile/{0}", userid);
@@ -82,10 +84,11 @@ namespace NewLineMessageApi
         /// <param name="channelAccessToken"></param>
         /// <param name="userId"></param>
         /// <param name="groupIdorRoomId"></param>
+        /// <param name="type"></param>
         /// <returns></returns>
         internal static UserProfile GetUserProfile(string channelAccessToken, string userId, string groupIdorRoomId, SourceType type)
         {
-            if (client == null) SetClient(channelAccessToken);
+            HttpClient client = SetClient(channelAccessToken);
             try
             {
 
@@ -106,7 +109,7 @@ namespace NewLineMessageApi
         internal static bool LeaveRoomorGroup(string ChannelAccessToken, string id, SourceType type)
         {
             bool flag = false;
-            if (client == null) SetClient(ChannelAccessToken);
+            HttpClient client = SetClient(ChannelAccessToken);
             try
             {
                 string strUrl = string.Format("https://api.line.me/v2/bot/{0}/{1}/leave", type.ToString(), id);
@@ -129,7 +132,7 @@ namespace NewLineMessageApi
         /// <returns></returns>
         internal static bool SendMessageAction(string ChannelAccessToken, PostMessageType postMessageType, SendMessage message)
         {
-            if (client == null) SetClient(ChannelAccessToken);
+            HttpClient client = SetClient(ChannelAccessToken);
 
             try
             {
@@ -170,7 +173,7 @@ namespace NewLineMessageApi
         /// <returns></returns>
         internal static async Task<byte[]> GetContntAsync(string ChannelAccessToken, string message_id)
         {
-            if (client == null) SetClient(ChannelAccessToken);
+            HttpClient client = SetClient(ChannelAccessToken);
             try
             {
                 string strUrl = string.Format("https://api.line.me/v2/bot/message/{0}/content", message_id);
@@ -189,7 +192,7 @@ namespace NewLineMessageApi
         /// <returns></returns>
         internal async static Task<UserProfile> GetUserProfileAsync(string ChannelAccessToken, string userid)
         {
-            if (client == null) SetClient(ChannelAccessToken);
+            HttpClient client = SetClient(ChannelAccessToken);
             try
             {
                 string strUrl = string.Format("https://api.line.me/v2/bot/profile/{0}", userid);
@@ -210,10 +213,11 @@ namespace NewLineMessageApi
         /// <param name="channelAccessToken"></param>
         /// <param name="userId"></param>
         /// <param name="groupIdorRoomId"></param>
+        /// <param name="type"></param>
         /// <returns></returns>
         internal async static Task<UserProfile> GetUserProfileAsync(string channelAccessToken, string userId, string groupIdorRoomId, SourceType type)
         {
-            if (client == null) SetClient(channelAccessToken);
+            HttpClient client = SetClient(channelAccessToken);
             try
             {
 
@@ -234,7 +238,7 @@ namespace NewLineMessageApi
         internal async static Task<bool> LeaveRoomorGroupAsync(string ChannelAccessToken, string id, SourceType type)
         {
             bool flag = false;
-            if (client == null) SetClient(ChannelAccessToken);
+            HttpClient client = SetClient(ChannelAccessToken);
             try
             {
                 string strUrl = string.Format("https://api.line.me/v2/bot/{0}/{1}/leave", type.ToString(), id);
@@ -257,7 +261,7 @@ namespace NewLineMessageApi
         /// <returns></returns>
         internal async static Task<bool> SendMessageActionAsync(string ChannelAccessToken, PostMessageType postMessageType, SendMessage message)
         {
-            if (client == null) SetClient(ChannelAccessToken);
+            HttpClient client = SetClient(ChannelAccessToken);
 
             try
             {

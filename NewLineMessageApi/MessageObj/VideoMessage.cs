@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace NewLineMessageApi.MessageObj
 {
+    /// <summary>
+    /// 影片訊息
+    /// </summary>
    public class VideoMessage:MessageObjectBase
     {
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public VideoMessage():base( SendMessageType.video)
         {
         }

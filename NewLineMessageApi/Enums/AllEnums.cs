@@ -132,17 +132,35 @@ namespace NewLineMessageApi
 
         /// <summary></summary>
         carousel,
+        /// <summary></summary>
         image_carousel
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
     public enum ImgAspectRatioType
     {
+        /// <summary>
+        /// 
+        /// </summary>
         rectangle,
+        /// <summary>
+        /// 
+        /// </summary>
         square
     }
+    /// <summary>
+    /// 
+    /// </summary>
     public enum ImgSizeType
     {
+        /// <summary>
+        /// 
+        /// </summary>
         cover,
+        /// <summary>
+        /// 
+        /// </summary>
         contain
     }
 
@@ -164,6 +182,9 @@ namespace NewLineMessageApi
         /// </summary>
         datetime
     }
+    /// <summary>
+    /// 訊息類型
+    /// </summary>
     public enum PostMessageType
     {
         /// <summary>回復訊息</summary>

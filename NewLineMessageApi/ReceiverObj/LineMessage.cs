@@ -1,5 +1,8 @@
 ﻿namespace NewLineMessageApi
 {
+    /// <summary>
+    /// Line傳入訊息
+    /// </summary>
     public class LineMessage
     {
         /// <summary>傳送地理位置 地址</summary>

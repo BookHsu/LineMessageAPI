@@ -17,10 +17,15 @@ namespace NewLineMessageApi
         /// <summary>
         /// 初始化物件
         /// </summary>
+        /// <example>
+        /// <code>
+        /// var channel = new LineChannel("Your AccessToken");
+        /// </code>
+        /// </example>
         /// <param name="ChannelAccessToken"></param>
         public LineChannel(string ChannelAccessToken)
         {
-            this.channelAccessToken = channelAccessToken;
+            this.channelAccessToken = ChannelAccessToken;
 
         }
         /// <summary>
@@ -28,6 +33,14 @@ namespace NewLineMessageApi
         /// </summary>
         /// <param name="request"></param>
         /// <param name="ChannelSecret"></param>
+        /// <example>
+        /// <code>
+        /// if (LineChannel.VaridateSignature(Request,"YourChannelSecret"))
+        /// {
+        ///  //Do SomeThing
+        /// }
+        /// </code>
+        /// </example>
         /// <returns></returns>
         public static bool VaridateSignature(HttpRequestMessage request, string ChannelSecret)
         {

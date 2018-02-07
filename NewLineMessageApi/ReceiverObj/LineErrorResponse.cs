@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NewLineMessageApi
 {
+    /// <summary>
+    /// 錯誤訊息元件
+    /// </summary>
    public class LineErrorResponse
     {
         /// <summary></summary>

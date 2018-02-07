@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace NewLineMessageApi.MessageObj
 {
+    /// <summary>
+    /// 圖片
+    /// </summary>
     public class ImageMessage:MessageObjectBase
     {
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public ImageMessage():base(SendMessageType.image)
         {
 

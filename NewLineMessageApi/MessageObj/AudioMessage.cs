@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace NewLineMessageApi.MessageObj
 {
+    /// <summary>
+    /// 聲音訊息
+    /// </summary>
    public class AudioMessage:MessageObjectBase
     {
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public AudioMessage():base(SendMessageType.audio)
         {
 

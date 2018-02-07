@@ -1,5 +1,8 @@
 ﻿namespace NewLineMessageApi
 {
+    /// <summary>
+    /// Templatemessage.action POSTBACK DATA
+    /// </summary>
     public class LinePostBack
     {
         /// <summary>回傳訊息</summary>

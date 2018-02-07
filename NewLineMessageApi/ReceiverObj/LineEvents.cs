@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NewLineMessageApi
 {
+    /// <summary>
+    /// Line事件
+    /// </summary>
     public class LineEvents
     {
         /// <summary></summary>

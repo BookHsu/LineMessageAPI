@@ -8,22 +8,37 @@ using NewLineMessageApi.MessageObj;
 namespace NewLineMessageApi
 {
     /// <summary>主動退送訊息</summary>
-    internal sealed class PushMessage : SendMessage
+    public sealed class PushMessage : SendMessage
     {
-        internal PushMessage() : base()
+        /// <summary>
+        /// 
+        /// </summary>
+        public PushMessage() : base()
         {
 
         }
-        internal PushMessage(string ToId) : this()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ToId"></param>
+        public PushMessage(string ToId) : this()
         {
             to = ToId;
         }
-        internal PushMessage(string ToId, params MessageObjectBase[] msg) : this(ToId)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ToId"></param>
+        /// <param name="msg"></param>
+        public PushMessage(string ToId, params MessageObjectBase[] msg) : this(ToId)
         {
             if (msg.Length > 5) throw new Exception("推播訊息不可大於五");
 
             messages.AddRange(msg);
         }
-        internal string to { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string to { get; set; }
     }
 }

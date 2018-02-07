@@ -6,12 +6,36 @@ using System.Threading.Tasks;
 
 namespace NewLineMessageApi.LineActions
 {
+    /// <summary>
+    /// 日期選擇
+    /// </summary>
    public class DatetimeAction:PostBackBase
     {
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public DatetimeAction():base(ActionType.datetimepicker)
         {
 
         }
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="Data"></param>
+        public DatetimeAction(string Data):this()
+        {
+            data = Data;
+        }
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="Data"></param>
+        /// <param name="Mode"></param>
+        public DatetimeAction(string Data, DateTimePickerType Mode):this(Data)
+        {
+            mode = Mode; 
+        }
+
         /// <summary>Datetime Picker</summary>
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
         public DateTimePickerType mode { get; set; }

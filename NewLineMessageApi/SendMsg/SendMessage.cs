@@ -11,14 +11,17 @@ namespace NewLineMessageApi
     /// <summary>
     /// 傳送訊息基底類別
     /// </summary>
-    internal abstract class SendMessage
+    public abstract class SendMessage
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected SendMessage()
         {
             messages = new List<MessageObjectBase>();
         }
         /// <summary>傳送訊息</summary>
         [MaxLength(5, ErrorMessage = "訊息不可大於五")]
-        internal List<MessageObjectBase> messages { get; set; }
+        public List<MessageObjectBase> messages { get; set; }
     }
 }

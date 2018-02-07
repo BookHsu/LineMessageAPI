@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace NewLineMessageApi.MessageObj
 {
+    /// <summary>
+    /// 地理位置
+    /// </summary>
     public class LocationMessage:MessageObjectBase
     {
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public LocationMessage():base(SendMessageType.location)
         {
 
