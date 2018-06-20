@@ -69,7 +69,7 @@ namespace NewLineMessageApi
         }
 
         /// <summary>
-        /// 離開對話或群組
+        /// 取得使用者資料
         /// </summary>
         /// <param name="userid"></param>
         /// <returns></returns>
