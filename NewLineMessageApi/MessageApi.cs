@@ -158,6 +158,38 @@ namespace NewLineMessageApi
                 client.Dispose();
             }
         }
+        internal static string GetTokenString(string ClientId,string ClientSecret)
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                string strUrl = "https://api.line.me/v2/oauth/accessToken";
+                //client.DefaultRequestHeaders.Clear();
+                //client.DefaultRequestHeaders.Add("Content-Type", "application/x-www-form-urlencoded");
+                Dictionary<string, string> dic = new Dictionary<string, string>()
+                {
+                    {"grant_type","client_credentials" },
+                    {"client_id",ClientId },
+                    {"client_secret",ClientSecret }
+                };
+                var content = new FormUrlEncodedContent(dic);
+                var result = client.PostAsync(strUrl, content).Result;
+                var responseContent = result.Content.ReadAsStringAsync().Result;
+                var obj = JsonConvert.DeserializeObject<TokenResponse>(responseContent);
+                if (obj.IsSuccess)
+                {
+                    return obj.access_token;
+                }
+                else
+                {
+                    throw throwLineErrorMsg(responseContent);
+                }
+            }
+            finally
+            {
+                client.Dispose();
+            }
+        }
 
         #endregion
 
@@ -285,7 +317,38 @@ namespace NewLineMessageApi
                 client.Dispose();
             }
         }
-
+internal async static Task<string> GetTokenStringAsync(string ClientId, string ClientSecret)
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                string strUrl = "https://api.line.me/v2/oauth/accessToken";
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Add("Content-Type", "application/x-www-form-urlencoded");
+                Dictionary<string, string> dic = new Dictionary<string, string>()
+                {
+                    {"grant_type","client_credentials" },
+                    {"client_id",ClientId },
+                    {"client_secret",ClientSecret }
+                };
+                var content = new FormUrlEncodedContent(dic);
+                var result = await client.PostAsync(strUrl, content);
+                var responseContent =await result.Content.ReadAsStringAsync();
+                var obj = JsonConvert.DeserializeObject<TokenResponse>(responseContent);
+                if (obj.IsSuccess)
+                {
+                    return obj.access_token;
+                }
+                else
+                {
+                    throw throwLineErrorMsg(responseContent);
+                }
+            }
+            finally
+            {
+                client.Dispose();
+            }
+        }
         #endregion
     }
 }
