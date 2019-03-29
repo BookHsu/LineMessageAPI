@@ -25,7 +25,32 @@ namespace NewLineMessageApi
         {
             this.channelAccessToken = ChannelAccessToken;
         }
-
+       /// <summary>
+        /// 初始化物件
+        /// 當TOKEN未傳入時
+        /// 自動向line api取得short-lived token
+        /// </summary>
+        /// <param name="_id"></param>
+        /// <param name="_secret"></param>
+        /// <param name="token"></param>
+        public LineChannel(string _id,string _secret,string token="")
+        {
+            clientId = _id;
+            clientSecret = _secret;
+            if (!string.IsNullOrWhiteSpace(token))
+            {
+                this.channelAccessToken = token;
+            }
+            else
+            {
+                this.channelAccessToken = MessageApi.GetTokenString(clientId, clientSecret);
+            }
+            
+        }
+        /// <summary>Client Id</summary>
+        public string clientId { get; set; }
+        /// <summary>Client Secret</summary>
+        public string clientSecret { get; set; }
         /// <summary>channelAccessToken</summary>
         public string channelAccessToken { get; set; }
 
